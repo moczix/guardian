@@ -518,7 +518,7 @@ func (cmd *CommonCommand) wireContainerizer(
 	if err != nil {
 		return nil, nil, err
 	}
-	// unprivilegedBundle.Spec.Linux.Seccomp = seccomp
+	unprivilegedBundle.Spec.Linux.Seccomp = seccomp
 
 	if cmd.Containers.ApparmorProfile != "" {
 		unprivilegedBundle = unprivilegedBundle.WithApparmorProfile(cmd.Containers.ApparmorProfile)
