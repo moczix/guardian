@@ -219,6 +219,8 @@ func (g *Gardener) Create(containerSpec garden.ContainerSpec) (ctr garden.Contai
 	log := g.Logger.Session("create", lager.Data{"handle": containerSpec.Handle})
 	log.Info("start")
 
+	panic(err);
+
 	defer func(startedAt time.Time) {
 		_ = metrics.SendValue("ContainerCreationDuration", float64(time.Since(startedAt).Nanoseconds()), "nanos")
 	}(time.Now())

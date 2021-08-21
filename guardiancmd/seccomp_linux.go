@@ -16,6 +16,7 @@ func buildSeccomp() (*specs.LinuxSeccomp, error) {
 			specs.ArchX86_64,
 			specs.ArchX86,
 			specs.ArchX32,
+			specs.ArchARM
 		},
 		Syscalls: []specs.LinuxSyscall{
 			AllowSyscall("accept"),
