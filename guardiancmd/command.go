@@ -514,11 +514,11 @@ func (cmd *CommonCommand) wireContainerizer(
 		WithMounts(unprivilegedMounts...).
 		WithMaskedPaths(defaultMaskedPaths())
 
-	seccomp, err := buildSeccomp()
+	_, err := buildSeccomp()
 	if err != nil {
 		return nil, nil, err
 	}
-	unprivilegedBundle.Spec.Linux.Seccomp = seccomp
+	//unprivilegedBundle.Spec.Linux.Seccomp = seccomp
 
 	if cmd.Containers.ApparmorProfile != "" {
 		unprivilegedBundle = unprivilegedBundle.WithApparmorProfile(cmd.Containers.ApparmorProfile)
